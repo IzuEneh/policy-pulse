@@ -48,7 +48,7 @@ export default function Home() {
 						))}
 					</CardContent>
 				</Card>
-				<Card className="flex flex-col items-center">
+				{/* <Card className="flex flex-col items-center">
 					<CardHeader>
 						<CardTitle className="text-lg capitalize">state</CardTitle>
 						<CardDescription>
@@ -83,7 +83,7 @@ export default function Home() {
 							/>
 						))}
 					</CardContent>
-				</Card>
+				</Card> */}
 			</div>
 		</main>
 	);
