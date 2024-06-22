@@ -1,3 +1,7 @@
+export function generateStaticParams() {
+  return [{ id: '1' }]
+}
+
 const fullSummary = {
 	id: 1,
 	title:
