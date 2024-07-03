@@ -8,7 +8,7 @@ type Props = {
 
 function Summary({ id, title, summary }: Props) {
 	return (
-		<Link href={`/${id}`}>
+		<Link href={`/${id}`} className="bg-slate-100 hover:bg-slate-200">
 			<div>
 				<span>{title}</span>
 				<p>{summary}</p>

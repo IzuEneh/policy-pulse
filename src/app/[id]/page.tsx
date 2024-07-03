@@ -1,5 +1,5 @@
 export function generateStaticParams() {
-  return [{ id: 'bill-0' }]
+  return [{ id: 'bill-0' }, { id: 'bill-1' }]
 }
 
 const fullSummary = {
