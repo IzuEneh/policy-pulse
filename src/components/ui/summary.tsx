@@ -8,9 +8,9 @@ type Props = {
 
 function Summary({ id, title, summary }: Props) {
 	return (
-		<Link href={`/${id}`} className="bg-slate-100 hover:bg-slate-200">
-			<div>
-				<span>{title}</span>
+		<Link href={`/${id}`} className="hover:bg-slate-100">
+			<div className="flex flex-col gap-2">
+				<span className="font-medium">{title}</span>
 				<p>{summary}</p>
 			</div>
 		</Link>
