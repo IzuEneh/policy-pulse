@@ -1,4 +1,9 @@
+'use client'
+
 import Summary from "@/components/ui/summary";
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+
+import MobileHome from "@/app/mobileHomePage"
 
 const summaries = [
 	{
@@ -46,6 +51,12 @@ const summaries = [
 ];
 
 export default function Home() {
+	const isMobile = useMediaQuery('(max-width: 600px)')
+
+	if (isMobile) {
+		return <MobileHome summaries={summaries} />
+	}
+
 	return (
 		<main className="flex min-h-screen flex-col items-center gap-5 p-5">
 			<h1 className="text-4xl">Recent Policies in your Area</h1>
