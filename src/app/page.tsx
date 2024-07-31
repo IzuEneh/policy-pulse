@@ -15,6 +15,34 @@ const summaries = [
 		summary: `The "Preventing Sex Trafficking and Strengthening Families Act" aims to prevent and address sex trafficking of children in foster care,
       extend and improve adoption incentives, and enhance international child support recovery.`,
 	},
+  {
+		id: "bill-0",
+		title:
+			"Servicemember Quality of Life Improvement and National Defense Authorization Act for Fiscal Year 2025",
+		summary: `This act authorizes appropriations for fiscal year 2025 for military activities of the Department of Defense,
+    military construction, and defense activities of the Department of Energy. It also prescribes military personnel strengths
+    and addresses various aspects of military operations and personnel matters.`,
+	},
+	{
+		id: "bill-1",
+		title: "Preventing Sex Trafficking and Strengthening Families Act",
+		summary: `The "Preventing Sex Trafficking and Strengthening Families Act" aims to prevent and address sex trafficking of children in foster care,
+      extend and improve adoption incentives, and enhance international child support recovery.`,
+	},
+  {
+		id: "bill-0",
+		title:
+			"Servicemember Quality of Life Improvement and National Defense Authorization Act for Fiscal Year 2025",
+		summary: `This act authorizes appropriations for fiscal year 2025 for military activities of the Department of Defense,
+    military construction, and defense activities of the Department of Energy. It also prescribes military personnel strengths
+    and addresses various aspects of military operations and personnel matters.`,
+	},
+	{
+		id: "bill-1",
+		title: "Preventing Sex Trafficking and Strengthening Families Act",
+		summary: `The "Preventing Sex Trafficking and Strengthening Families Act" aims to prevent and address sex trafficking of children in foster care,
+      extend and improve adoption incentives, and enhance international child support recovery.`,
+	},
 ];
 
 export default function Home() {
