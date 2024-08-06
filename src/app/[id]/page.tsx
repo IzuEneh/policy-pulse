@@ -1,3 +1,6 @@
+import Link from "next/link";
+import ChatBox from "./chat";
+
 export function generateStaticParams() {
   return [{ id: "bill-0" }, { id: "bill-1" }];
 }
@@ -80,21 +83,21 @@ export default function Details({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col p-5 gap-5">
+    <main className="flex min-h-screen flex-col p-5 gap-5 justify-start">
       <h1 className="text-4xl">{fullSummary.title}</h1>
-      <div className="flex flex-1 flex-col gap-1">
+      <div className="flex flex-1 flex-col gap-2">
         <div>
           <h2 className="text-2xl font-medium">General Summary</h2>
           <div>
             <p>{fullSummary.summary}</p>
           </div>
         </div>
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-col">
           <h2 className="text-2xl capitalize font-medium">status</h2>
           <p>{fullSummary.status}</p>
         </div>
-        <div className="flex flex-1 flex-col gap-1">
-          <h2 className="text-2xl font-medium">Notable Excerpts</h2>
+        <div className="flex  flex-col gap-1">
+          <h2 className="text-2xl font-medium">Notable Sections</h2>
           <div className="flex flex-1 gap-3 flex-col">
             {fullSummary.notableSections.map((section) => (
               <div key={section.id}>
@@ -104,21 +107,7 @@ export default function Details({ params }: { params: { id: string } }) {
             ))}
           </div>
         </div>
-        <div className="flex flex-1 flex-col">
-          <h2 className="text-2xl capitalize font-medium">timeline</h2>
-          <p>{fullSummary.timeline}</p>
-        </div>
-        <div className="flex flex-1 flex-col">
-          <h2 className="text-2xl capitalize font-medium">controversy</h2>
-          <p>{fullSummary.controversy}</p>
-        </div>
-        <div className="flex flex-1 flex-col">
-          <h2 className="text-2xl capitalize font-medium">comparison</h2>
-          <p>{fullSummary.comparison}</p>
-        </div>
-        <div className="flex flex-1 py-2">
-          <button type="submit" className="w-full border-4 rounded-md border-black p-2 active:scale-95 active:bg-slate-100">Chat with document</button>
-        </div>
+        <ChatBox initialMessages={[]} />
       </div>
     </main>
   );
