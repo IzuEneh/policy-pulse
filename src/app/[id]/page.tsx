@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export default function Details({ params }: { params: { id: string } }) {
-  const fullSummary = summaries.find((sum) => sum.id === params.id);
+  const fullSummary = summaries.find((sum) => sum.id === params.id); // fetch on server to get summary
 
   if (!fullSummary) {
     return null;
@@ -38,7 +38,7 @@ export default function Details({ params }: { params: { id: string } }) {
             ))}
           </div>
         </div>
-        <ChatBox initialMessages={[]} />
+        <ChatBox id={params.id} initialMessages={[]} />
       </div>
     </main>
   );

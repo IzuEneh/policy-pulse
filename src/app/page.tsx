@@ -1,10 +1,12 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Summary from "@/components/ui/summary";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 import MobileHome from "@/app/mobileHomePage";
 
+const queryClient = new QueryClient();
 const summaries = [
   {
     id: "bill-0",
@@ -63,7 +65,7 @@ const sections = [
   },
 ];
 
-export default function Home() {
+function Home() {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   if (isMobile) {
@@ -102,5 +104,13 @@ export default function Home() {
         ))}
       </div>
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
   );
 }
