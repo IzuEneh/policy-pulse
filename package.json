@@ -1,0 +1,14 @@
+{
+  "name": "policy-pulse",
+  "version": "1.0.0",
+  "description": "project to help distill political information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ieneh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
