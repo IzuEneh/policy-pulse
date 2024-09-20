@@ -1,14 +1,15 @@
 {
   "name": "policy-pulse",
-  "version": "1.0.0",
-  "description": "project to help distill political information",
-  "main": "index.js",
+  "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
   },
-  "author": "ieneh",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
-  }
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
 }
