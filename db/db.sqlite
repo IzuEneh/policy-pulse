@@ -1,0 +1,41 @@
+CREATE TABLE summary (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  summary TEXT NOT NULL
+);
+
+CREATE TABLE notable_section (
+  id INTEGER PRIMARY KEY,
+  bill_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  FOREIGN KEY (bill_id) REFERENCES summary (id)
+);
+
+CREATE TABLE documents (
+  id TEXT PRIMARY KEY,
+  file BLOB NOT NULL
+);
+
+-- Insert data into short_summaries
+INSERT INTO summary (id, title, summary) VALUES
+('bill-0', 'Servicemember Quality of Life Improvement and National Defense Authorization Act for Fiscal Year 2025',
+ 'This act authorizes appropriations for fiscal year 2025 for military activities of the Department of Defense, military construction, and defense activities of the Department of Energy. It also prescribes military personnel strengths and addresses various aspects of military operations and personnel matters.'),
+('bill-1', 'Preventing Sex Trafficking and Strengthening Families Act',
+ 'The "Preventing Sex Trafficking and Strengthening Families Act" aims to prevent and address sex trafficking of children in foster care, extend and improve adoption incentives, and enhance international child support recovery.');
+
+-- Insert data into notable_sections
+INSERT INTO notable_section (bill_id, title, description) VALUES
+('bill-0', 'Defense Spending',
+ 'Authorizes funding for various defense programs, including procurement, research and development, and military construction.'),
+('bill-0', 'Military Personnel',
+ 'Addresses various aspects of military personnel policy, including end strengths, officer grade distributions, and personnel benefits.'),
+('bill-0', 'Energy and Environment',
+ 'Includes provisions related to energy resilience and security, sustainable aviation fuel, and environmental remediation at military installations.'),
+('bill-1', 'Identifying and Protecting Children at Risk',
+ 'Requires states to develop policies for identifying and providing services to children at risk of sex trafficking.'),
+('bill-1', 'Reporting Requirements',
+ 'Mandates states to report instances of sex trafficking and maintain records in the Adoption and Foster Care Analysis and Reporting System.'),
+('bill-1', 'Missing Children',
+ 'Enhances efforts to locate and assist runaway foster children vulnerable to trafficking.');
+
