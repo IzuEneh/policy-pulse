@@ -1,10 +1,14 @@
-CREATE TABLE summary (
+DROP TABLE summary;
+DROP TABLE notable_section;
+DROP TABLE titles;
+
+CREATE TABLE IF NOT EXISTS summary (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   summary TEXT NOT NULL
 );
 
-CREATE TABLE notable_section (
+CREATE TABLE IF NOT EXISTS notable_section (
   id INTEGER PRIMARY KEY,
   bill_id TEXT NOT NULL,
   title TEXT NOT NULL,
@@ -12,10 +16,16 @@ CREATE TABLE notable_section (
   FOREIGN KEY (bill_id) REFERENCES summary (id)
 );
 
-CREATE TABLE documents (
+CREATE TABLE IF NOT EXISTS documents (
   id TEXT PRIMARY KEY,
   file BLOB NOT NULL
 );
+
+CREATE VIRTUAL TABLE IF NOT EXISTS titles USING fts5(title, id, tokenize='trigram');
+
+INSERT INTO titles (id, title) VALUES
+('bill-0', 'Servicemember Quality of Life Improvement and National Defense Authorization Act for Fiscal Year 2025'),
+('bill-1', 'Preventing Sex Trafficking and Strengthening Families Act');
 
 -- Insert data into short_summaries
 INSERT INTO summary (id, title, summary) VALUES
